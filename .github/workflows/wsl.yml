@@ -9,8 +9,7 @@ on:
 jobs:
   cmd-hello-world:
     runs-on: windows-latest
-    container: linaro/wine-arm64
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - run: bash -x ./job-cmd-hello-world.sh
+      - run: docker images
