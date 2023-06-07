@@ -19,7 +19,7 @@ jobs:
       - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: wsl --import wine C:\wine wine-rootfs.tar.gz
       - run: wsl -d debian # start distrib
-      - run: wsl -d wine # start distrib
+        #- run: wsl -d wine # start distrib
       - run: wsl -l -v
       - run: wsl -d debian echo lol
-      - run: wsl -d wine echo lol
+      - run: wsl -d wine -u root echo lol
