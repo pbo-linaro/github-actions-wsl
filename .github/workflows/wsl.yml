@@ -13,5 +13,5 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - run: docker images
-      - run: wget https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
+      - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: mkdir lol && cd lol && tar xzvf wine-rootfs.tar.gz
