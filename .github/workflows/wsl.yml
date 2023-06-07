@@ -12,14 +12,15 @@ jobs:
     steps:
       #- name: checkout
       #  uses: actions/checkout@v3
-      - uses: Vampire/setup-wsl@v2
-        with:
-          wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
+      #- uses: Vampire/setup-wsl@v2
+      #  with:
+      #    wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
       - run: docker images
       - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: wsl --import wine C:\wine wine-rootfs.tar.gz
-      - run: wsl -d debian # start distrib
+        #- run: wsl -d debian # start distrib
         #- run: wsl -d wine # start distrib
+      - run: cd c:/ && dir && cd wine && dir
       - run: wsl -l -v
       - run: wsl -d debian echo lol
       - run: wsl -d wine -u root echo lol
