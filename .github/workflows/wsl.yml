@@ -17,7 +17,7 @@ jobs:
       #    wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
       #      - run: docker images
         #- run: wsl --install -d Ubuntu
-      - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
+      - run: curl -o wine-rootfs.tar.gz https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz
       - run: du -h wine-rootfs.tar.gz
       - run: start /wait "wsl --import wine C:/wine-lol wine-rootfs.tar.gz --version 1"
         shell: cmd
