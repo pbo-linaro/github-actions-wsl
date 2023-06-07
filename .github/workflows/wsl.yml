@@ -10,8 +10,8 @@ jobs:
   cmd-hello-world:
     runs-on: windows-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+      #- name: checkout
+      #  uses: actions/checkout@v3
       - run: docker images
       - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: wsl --import wine C:\wine wine-rootfs.tar.gz
