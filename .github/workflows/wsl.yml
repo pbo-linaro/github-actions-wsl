@@ -12,6 +12,9 @@ jobs:
     steps:
       #- name: checkout
       #  uses: actions/checkout@v3
+      - uses: Vampire/setup-wsl@v2
+        with:
+          wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
       - run: docker images
       - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: wsl --import wine C:\wine wine-rootfs.tar.gz
