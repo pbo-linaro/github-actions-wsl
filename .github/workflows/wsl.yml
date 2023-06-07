@@ -15,3 +15,4 @@ jobs:
       - run: docker images
       - run: curl https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz --output wine-rootfs.tar.gz
       - run: wsl --import wine C:\wine wine-rootfs.tar.gz
+      - run:  wsl -l -v
