@@ -1,0 +1,16 @@
+name: wsl
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  cmd-hello-world:
+    runs-on: ubuntu-latest
+    container: linaro/wine-arm64
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - run: bash -x ./job-cmd-hello-world.sh
