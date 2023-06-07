@@ -10,21 +10,10 @@ jobs:
   cmd-hello-world:
     runs-on: windows-latest
     steps:
-      #- name: checkout
-      #  uses: actions/checkout@v3
-      #- uses: Vampire/setup-wsl@v2
-      #  with:
-      #    wsl-shell-command: bash -c "cd && bash --noprofile --norc -euo pipefail '{0}'"
-      #      - run: docker images
-        #- run: wsl --install -d Ubuntu
       - run: Invoke-WebRequest -OutFile wine-rootfs.tar.gz -Uri https://github.com/pbo-linaro/github-actions-wsl/releases/download/HEAD/wine-rootfs.tar.gz
       - run: du -h wine-rootfs.tar.gz
       - run: gunzip wine-rootfs.tar.gz
-      - run: wsl --import wine C:/wine-lol wine-rootfs.tar.gz --version 1
-        #- run: wsl -d debian # start distrib
-        #- run: wsl -d wine # start distrib
-      - run: cd c:/wine-lol/rootfs/ && dir
+      - run: wsl --import wine C:/wine wine-rootfs.tar.gz --version 1
+      - run: cd c:/wine/rootfs/ && dir
       - run: wsl -l -v
-        #- run: wsl -d Ubuntu -u root echo lol
-        #- run: wsl -d debian echo lol
       - run: wsl -d wine wine-arm64 cmd.exe /c 'echo hello world'
