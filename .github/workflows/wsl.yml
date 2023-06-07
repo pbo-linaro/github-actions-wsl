@@ -13,3 +13,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - run: docker images
+      - run: docker run -it --rm linaro/wine-arm64 echo hello
