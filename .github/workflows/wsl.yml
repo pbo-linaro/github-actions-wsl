@@ -20,7 +20,7 @@ jobs:
       - run: wsl --import wine C:/wine-lol wine-rootfs.tar.gz
         #- run: wsl -d debian # start distrib
         #- run: wsl -d wine # start distrib
-      - run: cd c:/ && dir && cd wine && dir
+      - run: cd c:/ && dir && cd wine-lol && dir && cd rootfs && dir
       - run: wsl -l -v
         #- run: wsl -d debian echo lol
       - run: wsl -d wine -u root echo lol
